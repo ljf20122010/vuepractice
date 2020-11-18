@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div>
+        <button type="button" onclick="alert('welcome!')">touch me !</button>
+    </div>
+
+    <p>请输入数字，如果值不是数字，浏览器会弹出提示框</p>
+    <input id="demo" type="text">
+
+    <script type="text/javascript">
+        function myFunction1(){
+            var x=document.getElementById('demo').value;
+            if(x==''||isNaN(x)){
+                alert('不是数字');
+            }
+        }
+    </script>
+    <button type="button" onclick="myFunction1()">touch here</button>
+
+    <div>
+        <p id="demo2">one white</p>
+        <button type="button" onclick="myFunction2()">touch here2</button>
+    </div>
+    <script>
+        function myFunction2(){
+            document.getElementById('demo2').innerHTML="change!";
+        }
+    </script>
+
+    <div>
+        <form name="myForm" action="demo_form.php"
+              onsubmit="return validateForm()" method="post">
+            名字:<input type="text" name="fname" >
+            <input type="submit" value="提交">
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm(){
+            var x=document.forms["myForm"]["fname"].value();
+            if(x==null||x==""){
+                alert("请输入名字");
+                return false;
+            }
+        }
+    </script>
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+        Click Me!
+    </div>
+
+    <script>
+        function mOver(obj){
+            obj.innerHTML="Thanke You";
+        }
+        function mOut(obj){
+            obj.innerHTML="Mouse Over Me";
+        }
+    </script>
+
+
+</body>
+</html>

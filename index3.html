@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="1122.css"/>
+</head>
+<body>
+
+<div id="ad">
+    <gxx-calculator></gxx-calculator>
+</div>
+
+<template id="key">
+    <button :class="keyClass" @click="clickBtn">{{keyNumber}}</button>
+</template>
+
+<template id="keyGroup">
+    <div>
+        <div id="" class="keyShell" v-for="tmp in showArr">
+            <gxx-key :key-number="tmp"></gxx-key>
+        </div>
+    </div>
+</template>
+
+<template id="keyGroups">
+    <div class="keyGroup">
+        <div v-for="tmp in showArrs">
+            <gxx-key-group :show-arr="tmp"></gxx-key-group>
+        </div>
+    </div>
+</template>
+
+<template id="calculator">
+    <div class="calculatorState">
+        <div>
+            <input type="text" :class="screenClass" v-model="showScreen" />
+        </div>
+        <gxx-key-groups></gxx-key-groups>
+    </div>
+</template>
+
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.js" type="text/javascript" charset="utf-8"></script>
+<script src="1122.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
