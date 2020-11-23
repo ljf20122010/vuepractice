@@ -4,6 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     {{message}}
     <div :id="message">
+      <input v-model="message">
       <ul>
         <todo-item @delete="handleDelete" v-for="item in list" :key="item.title" :title="item.title" :del="item.del">
           <template v-slot:pre="{value}">
@@ -21,14 +22,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 import TodoList from "@/components/TodoList";
 import TodoItem from "@/components/TodoItem";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     TodoList,
     TodoItem
   },
